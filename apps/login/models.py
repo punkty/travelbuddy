@@ -21,7 +21,7 @@ class UserManager(models.Manager):
         try:
             user = User.objects.get(username=request.POST['username'])
             password = request.POST['password'].encode()
-            if bcrypt.hashpw(password, user.password.encode()):
+            if bcrypt.checkpw(password, user.password.encode()):
                 return (True, user)
 
         except ObjectDoesNotExist:

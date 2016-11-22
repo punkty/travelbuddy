@@ -48,9 +48,6 @@ class TripManager(models.Manager):
             errors.append('Please tell us more about the plan.')
         return errors
 
-
-
-
 class Trip(models.Model):
     destination = models.CharField(max_length=100)
     plan = models.CharField(max_length=255)
